@@ -21,7 +21,7 @@ services:
       mode: replicated
       replicas: 1
       placement:
-        constraints: [node.hostname == nodo1]
+        constraints: [node.hostname == nodo2]
     networks:  
       - backend          
 
@@ -38,7 +38,7 @@ services:
       - MYSQL_REPLICATION_MODE=slave
       - MYSQL_REPLICATION_USER=repl_user
       - MYSQL_REPLICATION_PASSWORD=repl_password
-      - MYSQL_MASTER_HOST=nodo1
+      - MYSQL_MASTER_HOST=nodo2
       - MYSQL_MASTER_PORT_NUMBER=3306
       - MYSQL_MASTER_ROOT_PASSWORD=master_root_password
       - BITNAMI_DEBUG=true
@@ -46,7 +46,7 @@ services:
       mode: replicated
       replicas: 2
       placement:
-        constraints: [node.hostname != nodo1]
+        constraints: [node.hostname != nodo2]
     networks:
       - backend
 
