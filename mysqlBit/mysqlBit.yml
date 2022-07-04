@@ -21,6 +21,8 @@ services:
       replicas: 1
       placement:
         constraints: [node.hostname == nodo1]
+    networks:  
+      - backend          
 
 
   mysql-slave:
@@ -44,3 +46,11 @@ services:
       replicas: 3
       placement:
         constraints: [node.role == worker]
+    networks:
+      - backend
+
+networks:
+  backend:
+    external: true
+  
+      
