@@ -56,7 +56,7 @@ services:
         - mysql-master
         - mysql-slave          
     volumes:
-        - ./maxscale.cnf.d:/etc/maxscale.cnf.d
+        - /mnt/mysql/maxscale.cnf.d:/etc/maxscale.cnf.d
     deploy:
       mode: replicated
       replicas: 1
