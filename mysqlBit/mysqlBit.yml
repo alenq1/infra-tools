@@ -44,7 +44,7 @@ services:
       - BITNAMI_DEBUG=true
     deploy:
       mode: replicated
-      replicas: 3
+      replicas: 2
       placement:
         constraints: [node.role == worker]
     networks:
