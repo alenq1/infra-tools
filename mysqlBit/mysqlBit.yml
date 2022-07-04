@@ -61,7 +61,7 @@ services:
       mode: replicated
       replicas: 1
       placement:
-        constraints: [node.role != worker]
+        constraints: [node.role == worker]
     ports:
         - "4006:4006"  # readwrite port
         - "4008:4008"  # readonly port
