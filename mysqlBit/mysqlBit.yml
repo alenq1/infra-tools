@@ -15,6 +15,7 @@ services:
       - MYSQL_USER=my_user
       - MYSQL_PASSWORD=my_password
       - MYSQL_DATABASE=my_database
+      - BITNAMI_DEBUG=true
     deploy:
       mode: replicated
       replicas: 1
@@ -37,6 +38,7 @@ services:
       - MYSQL_MASTER_HOST=mysql-master
       - MYSQL_MASTER_PORT_NUMBER=3306
       - MYSQL_MASTER_ROOT_PASSWORD=master_root_password
+      - BITNAMI_DEBUG=true
     deploy:
       mode: replicated
       replicas: 3
